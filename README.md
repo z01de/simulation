@@ -2,6 +2,9 @@
 реализация на Java, описание задания 
 https://zhukovsd.github.io/java-backend-learning-course/projects/simulation/
 
+![image](https://github.com/user-attachments/assets/51272930-8ad6-4732-876e-0504ae10541d)
+
+
 Суть проекта
 ----------
 
