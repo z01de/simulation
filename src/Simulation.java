@@ -20,29 +20,31 @@ public class Simulation {
         renderer.render(simulationMap);
         Menu menu = new Menu();
         int stepCounter = 0;
-        switch (menu.print()){
-            case SIMULATE_ONE_MOVE -> {
-                stepCounter++;
-                System.out.println("Step: " + stepCounter);
-                turnActions(simulationMap);
-                renderer.render(simulationMap);
-            }
-            case INFINITE_SIMULATION -> {
-                while (true) {
+        while (true) {
+            switch (menu.print()) {
+                case SIMULATE_ONE_MOVE -> {
                     stepCounter++;
                     System.out.println("Step: " + stepCounter);
                     turnActions(simulationMap);
                     renderer.render(simulationMap);
-                    try {
-                        Thread.sleep(1000);
-                    }catch (InterruptedException e){
-                        e.printStackTrace();
-                    }
                 }
+                case INFINITE_SIMULATION -> {
+                    while (true) {
+                        stepCounter++;
+                        System.out.println("Step: " + stepCounter);
+                        turnActions(simulationMap);
+                        renderer.render(simulationMap);
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
 
-            }
-            case EXIT -> {
-                System.exit(EXIT);
+                }
+                case EXIT -> {
+                    System.exit(EXIT);
+                }
             }
         }
     }
